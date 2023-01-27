@@ -11,6 +11,16 @@ body{
 }
 #scores{
     flex-direction: column;
+    align-content: center;
+}
+.cpuscore, .plyrscore {
+    left: 50px;
+    color: gold;
+    font-size: 30px;
+}
+
+#res_output {
+    font-size: 50px;
 }
 
 h6 {
@@ -25,4 +35,5 @@ h6 {
 button {
     border-radius: 25px;
     padding: 5px 5px 5px 5px;
+    margin: 0px;
 }
