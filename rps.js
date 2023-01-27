@@ -18,16 +18,25 @@ let Count=0;
 
 function OneRPSRound(PlyrChoice, CpuChoice){
     console.log(PlyrChoice.textContent);
+    if(PlayerScore<5 && CpuScore<5){
     if (PlyrChoice.textContent == 'Rock' && CpuChoice == 'paper'
         || PlyrChoice.textContent== 'Paper' && CpuChoice == 'scissors'
         || PlyrChoice.textContent == 'Scissors' && CpuChoice == 'rock'){
-        ++CpuScore; document.querySelector('#res_output').textContent = 'You LOSE!'; document.getElementById("res_output").style.color="red";}
+        ++CpuScore; document.querySelector('#res_output').textContent = 'You LOSE!';
+         document.getElementById("res_output").style.color="red";
+        }
     else if (PlyrChoice.textContent == 'Paper' && CpuChoice == 'rock'
         || PlyrChoice.textContent == 'Scissors' && CpuChoice == 'paper'
         || PlyrChoice.textContent == 'Rock' && CpuChoice == 'scissors') {
-        ++PlayerScore;document.querySelector('#res_output').textContent = 'You WIN!'; document.getElementById("res_output").style.color="green";}
-    else { document.querySelector('#res_output').textContent = 'DRAW!';document.getElementById("res_output").style.color="orange";}
-    removeEventListener('click', OneRPSRound);
+        ++PlayerScore;document.querySelector('#res_output').textContent = 'You WIN!'; 
+        document.getElementById("res_output").style.color="green";
+    }
+    else { 
+        document.querySelector('#res_output').textContent = 'DRAW!';
+        document.getElementById("res_output").style.color="orange";
+    }
+    removeEventListener('click', OneRPSRound);}
+    else disablebuttons(true);
 }
 
 function disablebuttons(state){
@@ -37,8 +46,6 @@ function disablebuttons(state){
 
 
 function game(){
-        disablebuttons(true);
-        setTimeout(e=>{disablebuttons(false);},1000);
         let CpuChoice=getComputerChoice();
         PlayerChoice[0].addEventListener('click', OneRPSRound(this,CpuChoice));
         document.querySelector('.cpuscore').textContent=CpuScore;
