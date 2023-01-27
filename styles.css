@@ -1,0 +1,28 @@
+body{
+    display: flex;
+    flex-direction: column;
+    position:absolute;
+    justify-items: center;
+    color:white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: black;
+    align-content: center;
+    left:100vh;
+}
+#scores{
+    flex-direction: column;
+}
+
+h6 {
+    background-color: rgba(172,158,255,55);
+    border-radius: 10px;
+    padding: 15px;
+    align-content: center;
+}
+#buttons{
+    flex-direction: column;
+}
+button {
+    border-radius: 25px;
+    padding: 5px 5px 5px 5px;
+}
